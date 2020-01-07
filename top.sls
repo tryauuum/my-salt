@@ -1,4 +1,6 @@
 base:
+  '*':
+    - modules.packages
   melchior:
     - modules.atop
     - modules.grub-no-mitigations
