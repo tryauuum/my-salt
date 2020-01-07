@@ -1,7 +1,13 @@
 {% set packages_install = ['vim',
-                           'htop'] %}
+                           'curl',
+                           'screen',
+                           'htop',
+                           ] %}
 
-{% set packages_purge = ['snapd'] %}
+{% set packages_purge = ['snapd',
+                         'mlocate',
+                         'os-prober',
+                         ] %}
 
 packages_install:
   pkg.installed:
