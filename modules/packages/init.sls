@@ -5,6 +5,7 @@
                            ] %}
 
 {% set packages_purge = ['snapd',
+                         'pidgin',
                          'mlocate',
                          'os-prober',
                          ] %}
