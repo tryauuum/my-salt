@@ -1,7 +1,5 @@
 base:
   '*':
+    - modules.salt-minion
+    - modules.grub
     - modules.packages
-  melchior:
-    - modules.grub-no-mitigations
-  balthasar:
-    - modules.grub-no-mitigations
