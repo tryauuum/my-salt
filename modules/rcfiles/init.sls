@@ -15,3 +15,12 @@ rcfiles_vimrc_tryauuum:
     - user: tryauuum
     - group: tryauuum
     - source: salt://{{ tpldir }}/files/vimrc
+
+rcfiles_xfce-terminal_tryauuum:
+  file.recurse:
+    - name: /home/tryauuum/.config/xfce4/terminal/
+    - source: salt://{{ tpldir }}/files/terminal/
+    - user: tryauuum
+    - group: tryauuum
+    - dir_mode: 0700
+    - file_mode: 0600
