@@ -1,0 +1,25 @@
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+set backspace=indent,eol,start
+set foldcolumn=0
+
+syntax on
+set modeline
+set mouse=n
+
+set hlsearch
+set background=dark
+
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+
+colorscheme zellner
+"colorscheme industry
+
+
+let perl_fold=1
+let sh_fold_enabled=1
+let perl_extended_vars=1
+let perl_sync_dist=250
+
+set colorcolumn=84

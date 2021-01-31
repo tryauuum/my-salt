@@ -11,6 +11,7 @@ packages_install:
       - openvpn
 #     - redshift
       - screen
+      - openssh-server
       - vim
       - wireshark
 
