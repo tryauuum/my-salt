@@ -4,3 +4,4 @@ base:
     - modules.grub
     - modules.packages
     - modules.rcfiles
+    - modules.apt
