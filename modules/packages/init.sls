@@ -5,6 +5,7 @@ packages_install:
       - ethtool
       - git
       - htop
+      - kpartx
 {%- if grains.id == 'melchior' %}
       - msr-tools
 {%- endif %}
