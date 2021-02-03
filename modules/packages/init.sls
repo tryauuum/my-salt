@@ -2,6 +2,7 @@ packages_install:
   pkg.installed:
     - pkgs:
       - curl
+      - ethtool
       - git
       - htop
 {%- if grains.id == 'melchior' %}
