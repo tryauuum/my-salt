@@ -9,6 +9,7 @@ packages_install:
 {%- endif %}
 #     - network-manager-openvpn
       - openvpn
+      - pwgen
 #     - redshift
       - screen
       - openssh-server
