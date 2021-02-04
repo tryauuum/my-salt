@@ -1,4 +1,3 @@
 * lowlatency kernel ( linux-lowlatency-hwe-XX.04 )
 * bashrc (for aliases mostly)
 * more salt management — maybe a cron job?
-* check if unattended-upgrades module actually works

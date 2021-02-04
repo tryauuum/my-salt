@@ -17,6 +17,7 @@ apt_unattended:
         Unattended-Upgrade::Allowed-Origins {
             "${distro_id}:${distro_codename}";
             "${distro_id}:${distro_codename}-security";
+            "${distro_id}:${distro_codename}-updates";
             "${distro_id}ESMApps:${distro_codename}-apps-security";
             "${distro_id}ESM:${distro_codename}-infra-security";
         };
