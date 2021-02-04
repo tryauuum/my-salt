@@ -16,6 +16,7 @@ packages_install:
       - screen
       - openssh-server
       - vim
+      - whois
       - wireshark
 
 packages_purge:
