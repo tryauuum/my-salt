@@ -2,3 +2,4 @@
 * bashrc (for aliases mostly)
 * more salt management — maybe a cron job?
 * apt-get autoremove --purge state that watches packages removal
+* automate fucking fluxgui | https://github.com/xflux-gui/fluxgui

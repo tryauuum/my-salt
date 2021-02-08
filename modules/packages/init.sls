@@ -12,7 +12,6 @@ packages_install:
 #     - network-manager-openvpn
       - openvpn
       - pwgen
-#     - redshift
       - screen
       - openssh-server
       - vim
