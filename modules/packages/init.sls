@@ -13,10 +13,11 @@ packages_install:
       - openvpn
       - pwgen
       - screen
+      - nmap
       - openssh-server
       - vim
       - whois
-      - wireshark
+      - wireshark # FIXME add a condition
 
 packages_purge:
   pkg.purged:
