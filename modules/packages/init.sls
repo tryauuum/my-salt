@@ -11,6 +11,7 @@ packages_install:
 {%- endif %}
 #     - network-manager-openvpn
       - openvpn
+      - pv
       - pwgen
       - screen
       - nmap
