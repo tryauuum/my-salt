@@ -5,3 +5,4 @@ base:
     - modules.packages
     - modules.rcfiles
     - modules.apt
+    - modules.sysctl
