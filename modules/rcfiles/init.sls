@@ -1,3 +1,4 @@
+# FIXME maybe you shoud manage system-wide vimrc in /etc/vim ?
 rcfiles_vimrc_root:
   file.managed:
     - names:

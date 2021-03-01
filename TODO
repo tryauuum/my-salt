@@ -5,3 +5,5 @@
 * automate fucking fluxgui | https://github.com/xflux-gui/fluxgui
 * umask
 * fucking 0700 for my home dir!
+* rework vim
+* and vim should be system-wide EDITOR
