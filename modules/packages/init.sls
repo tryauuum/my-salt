@@ -27,5 +27,4 @@ packages_purge:
       - os-prober
       - pidgin
       - snapd
-      - thunderbird
       - transmission-gtk
