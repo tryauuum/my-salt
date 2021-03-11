@@ -12,10 +12,11 @@ packages_install:
 #     - network-manager-openvpn
       - openvpn
       - pv
-      - pwgen
-      - screen
+      - light-locker
       - nmap
       - openssh-server
+      - pwgen
+      - screen
       - vim
       - whois
       - wireshark # FIXME add a condition
