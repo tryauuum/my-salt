@@ -12,11 +12,10 @@ packages_install:
 #     - network-manager-openvpn
       - openvpn
       - pv
-      - light-locker
-      - nmap
-      - openssh-server
       - pwgen
       - screen
+      - nmap
+      - openssh-server
       - vim
       - whois
       - wireshark # FIXME add a condition
@@ -24,6 +23,7 @@ packages_install:
 packages_purge:
   pkg.purged:
     - pkgs:
+      - light-locker
       - mlocate
       - os-prober
       - pidgin
