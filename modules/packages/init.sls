@@ -10,12 +10,13 @@ packages_install:
       - msr-tools
 {%- endif %}
 #     - network-manager-openvpn
+      - nmap
+      - openssh-server
       - openvpn
       - pv
       - pwgen
       - screen
-      - nmap
-      - openssh-server
+      - sipcalc
       - vim
       - whois
       - wireshark # FIXME add a condition
