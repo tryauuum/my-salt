@@ -1,10 +1,7 @@
 * lowlatency kernel ( linux-lowlatency-hwe-XX.04 )
-* bashrc (for aliases mostly)
 * more salt management — maybe a cron job?
 * apt-get autoremove --purge state that watches packages removal
 * automate fucking fluxgui | https://github.com/xflux-gui/fluxgui
-* umask
+* umask should be 0077 SYSTEM WIDE
 * fucking 0700 for my home dir!
 * rework vim
-* and vim should be system-wide EDITOR
-* don't fucking forget about HISTTIMEFORMAT
