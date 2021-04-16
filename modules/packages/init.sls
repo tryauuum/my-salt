@@ -24,6 +24,7 @@ packages_install:
 packages_purge:
   pkg.purged:
     - pkgs:
+      - landscape-common
       - light-locker
       - mlocate
       - os-prober
