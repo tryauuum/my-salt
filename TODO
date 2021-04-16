@@ -5,3 +5,4 @@
 * umask should be 0077 SYSTEM WIDE
 * fucking 0700 for my home dir!
 * rework vim
+* lookup different pull & push urls, to make pulling even easier

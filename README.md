@@ -5,7 +5,7 @@ salt states for managing my personal computers
 initial setup is easy
 
 ```
-git clone git@github.com:tryauuum/my-salt.git /srv/salt/
+git clone https://github.com/tryauuum/my-salt /srv/salt/
 wget -O - https://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
 echo 'deb http://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest focal main' > /etc/apt/sources.list.d/saltstack.list
 apt update
