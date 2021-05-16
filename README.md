@@ -1,9 +1,11 @@
-# my-salt
+# what is this
 
-salt states for managing my personal computers
+it puts your computer in a predictable (to my taste) state\
+in other words, this is a collection of [salt](https://github.com/saltstack/salt) states for managing my personal computers
+
+# how to install
 
 initial setup is easy
-
 ```
 git clone https://github.com/tryauuum/my-salt /srv/salt/
 wget -O - https://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
@@ -12,11 +14,12 @@ apt update
 apt-get install salt-minion --yes
 ```
 
-and then you can run this thing to apply state from this repo
+then you can (periodically) run this thing when you want to apply state from this repo
 ```
 salt-call state.apply --local
 ```
 
 # limitations
 
-to keep everything easy to install, pillar is not used. due to that, code somewhat sucks
+* to keep everything easy to install, pillar is not used. due to that, code somewhat sucks
+* installation guide pretends that only one operating system exists (ubuntu 20.04)
