@@ -9,3 +9,5 @@
 * (maybe) disable password-based SSH auth? you know how shitty your passwords are
 * /etc/systemd/timesyncd.conf
 * fail2ban?
+* some sort of broken RAID notifier
+* +x for melchior hook — haven't I done it yet?
