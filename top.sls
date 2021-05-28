@@ -7,3 +7,4 @@ base:
     - modules.vim
     - modules.apt
     - modules.sysctl
+    - modules.fstab
