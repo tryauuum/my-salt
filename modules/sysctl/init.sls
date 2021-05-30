@@ -8,11 +8,12 @@ sysctl_config:
         kernel.panic = 300
         kernel.sysrq = 1
         net.ipv4.conf.all.log_martians = 1
+        net.ipv4.ip_forward = 0
         # want swap for suspend only
         vm.swappiness = 0
 
 sysctl_apply:
   cmd.run:
+    # need to always run this, not only on file change
     - name: sysctl -q -p /etc/sysctl.conf
-    - onchanges:
-      - sysctl_config
+    - stateful: True
