@@ -10,4 +10,4 @@ fstab_proc_secure:
       - noexec
       - relatime
 # secure as fuck. https://www.kernel.org/doc/Documentation/filesystems/proc.txt
-      - hidepid=invisible
+      - hidepid=2
