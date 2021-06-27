@@ -9,14 +9,13 @@ packages_install:
 {%- if grains.id == 'melchior' %}
       - msr-tools
 {%- endif %}
-#     - network-manager-openvpn
       - nmap
       - openssh-server
-      - openvpn
       - pv
       - pwgen
       - screen
       - sipcalc
+      - smartmontools
       - vim
       - whois
       - wireshark # FIXME add a condition
@@ -27,6 +26,8 @@ packages_purge:
       - landscape-common
       - light-locker
       - mlocate
+      - network-manager-openvpn # don't need it now
+      - openvpn                 # don't need it now
       - os-prober
       - pidgin
       - snapd
