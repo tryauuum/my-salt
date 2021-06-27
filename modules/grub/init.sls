@@ -1,7 +1,7 @@
 # what kind of things people do when they desire not to use pillar
 {%- set options = ['ipv6.disable=1'] %}
 {%- if grains.id == 'melchior' %}
-    {%- do options.append('mitigations=off tsc=reliable') %}
+    {%- do options.append('mitigations=off') %}
 {%- endif %}
 
 grub_fix_defaults:
