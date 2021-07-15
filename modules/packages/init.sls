@@ -23,6 +23,7 @@ packages_install:
 packages_purge:
   pkg.purged:
     - pkgs:
+      - cloud-init
       - landscape-common
       - light-locker
       - mlocate
@@ -32,3 +33,4 @@ packages_purge:
       - pidgin
       - snapd
       - transmission-gtk
+      - ubuntu-server           # byobu and others
