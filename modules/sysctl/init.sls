@@ -8,6 +8,9 @@ sysctl_config:
         kernel.panic = 300
         kernel.sysrq = 1
         net.ipv4.conf.all.log_martians = 1
+        net.ipv4.conf.default.log_martians = 1
+        net.ipv4.conf.all.ignore_routes_with_linkdown = 1
+        net.ipv4.conf.default.ignore_routes_with_linkdown = 1
         net.ipv4.ip_forward = 0
         # want swap for suspend only
         vm.swappiness = 0
