@@ -8,37 +8,41 @@ rcfiles_vimrc_root:
     - group: root
     - source: salt://{{ tpldir }}/files/vimrc
 
-rcfiles_vimrc_tryauuum:
+{%- set unprivileged_user = salt['cmd.shell']('getent passwd 1000 |
+    grep -oP "^[^:]+"', ignore_retcode=True) %}
+{%- if unprivileged_user %}
+rcfiles_vimrc_{{ unprivileged_user }}:
   file.managed:
     - names:
-      - /home/tryauuum/.vimrc
+      - /home/{{ unprivileged_user }}/.vimrc
     - mode: 0600
-    - user: tryauuum
-    - group: tryauuum
+    - user: {{ unprivileged_user }}
+    - group: {{ unprivileged_user }}
     - source: salt://{{ tpldir }}/files/vimrc
 
-rcfiles_bashrc_tryauuum:
+rcfiles_bashrc_{{ unprivileged_user }}:
   file.managed:
     - names:
-      - /home/tryauuum/.bashrc
+      - /home/{{ unprivileged_user }}/.bashrc
     - mode: 0600
-    - user: tryauuum
-    - group: tryauuum
+    - user: {{ unprivileged_user }}
+    - group: {{ unprivileged_user }}
     - source: salt://{{ tpldir }}/files/bashrc
 
 # this is to make sure I migrated all machines to new aliases
 rcfiles_remove_aliases:
   file.absent:
-    - name: /home/tryauuum/.bash_aliases
+    - name: /home/{{ unprivileged_user }}/.bash_aliases
 
-rcfiles_xfce-terminal_tryauuum:
+rcfiles_xfce-terminal_{{ unprivileged_user }}:
   file.recurse:
-    - name: /home/tryauuum/.config/xfce4/terminal/
+    - name: /home/{{ unprivileged_user }}/.config/xfce4/terminal/
     - source: salt://{{ tpldir }}/files/terminal/
-    - user: tryauuum
-    - group: tryauuum
+    - user: {{ unprivileged_user }}
+    - group: {{ unprivileged_user }}
     - dir_mode: 0700
     - file_mode: 0600
+{%- endif %}
 
 # not really an rc-file
 rcfiles_unfuck_default_editor:
