@@ -8,6 +8,7 @@ base:
     - modules.apt
     - modules.sysctl
     - modules.fstab
+    - modules.unix
 {%- if salt.pkg.version('docker-ce') %}
     - modules.docker
 {%- endif %}
