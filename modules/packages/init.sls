@@ -18,7 +18,10 @@ packages_install:
       - smartmontools
       - vim
       - whois
-      - wireshark # FIXME add a condition
+{#- wireshark only installed if GUI already exists #}
+{%- if salt.pkg.version('xubuntu-core') %}
+      - wireshark
+{%- endif %}
 
 packages_purge:
   pkg.purged:

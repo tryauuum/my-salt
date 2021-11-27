@@ -7,6 +7,7 @@
 * rework vim
 * lookup different pull & push urls, to make pulling even easier
 * (maybe) disable password-based SSH auth? you know how shitty your passwords are
+* root password change to random value
 * /etc/systemd/timesyncd.conf
 * fail2ban?
 * some sort of broken RAID notifier
