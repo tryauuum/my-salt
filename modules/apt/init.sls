@@ -14,13 +14,9 @@ apt_unattended:
             "--force-confdef";
             "--force-confold";
         }
-        Unattended-Upgrade::Allowed-Origins {
-            "${distro_id}:${distro_codename}";
-            "${distro_id}:${distro_codename}-security";
-            "${distro_id}:${distro_codename}-updates";
-            "${distro_id}ESMApps:${distro_codename}-apps-security";
-            "${distro_id}ESM:${distro_codename}-infra-security";
-        };
+        Unattended-Upgrade::Origins-Pattern {
+            "origin=*";
+        }
         Unattended-Upgrade::Package-Blacklist {
         };
         Unattended-Upgrade::DevRelease "auto";
