@@ -16,8 +16,9 @@ salt-minion_please_stay_dead:
             bare = false
             logallrefupdates = true
         [remote "origin"]
-            url = git@github.com:tryauuum/my-salt.git
+            url = https://github.com/tryauuum/my-salt
             fetch = +refs/heads/*:refs/remotes/origin/*
+            pushurl = git@github.com:tryauuum/my-salt.git
         [branch "master"]
             remote = origin
             merge = refs/heads/master
