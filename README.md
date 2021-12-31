@@ -22,4 +22,5 @@ salt-call state.apply --local
 # limitations
 
 * to keep everything easy to install, pillar is not used. due to that, code somewhat sucks
-* installation guide pretends that only one operating system exists (ubuntu 20.04)
+* again, to keep everything easy to install, no node roles or categories exist. because assining roles/categories to machines complicates installation
+* installation guide assumes that only one operating system exists (ubuntu 20.04)
