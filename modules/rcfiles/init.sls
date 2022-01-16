@@ -11,6 +11,15 @@ rcfiles_vimrc_root:
 {%- set unprivileged_user = salt['cmd.shell']('getent passwd 1000 |
     grep -oP "^[^:]+"', ignore_retcode=True) %}
 {%- if unprivileged_user %}
+rcfiles_sqliterc_{{ unprivileged_user }}:
+  file.managed:
+    - names:
+      - /home/{{ unprivileged_user }}/.sqliterc
+    - mode: 0600
+    - user: {{ unprivileged_user }}
+    - group: {{ unprivileged_user }}
+    - source: salt://{{ tpldir }}/files/sqliterc
+
 rcfiles_vimrc_{{ unprivileged_user }}:
   file.managed:
     - names:
