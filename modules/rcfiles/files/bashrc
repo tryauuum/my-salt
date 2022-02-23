@@ -129,6 +129,8 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ip='ip --color=auto'
 alias ssh-add='ssh-add -t 660m' # feel the pain
 alias purge='ssh-keygen -R'
+alias aws-cli='sudo docker run --rm -i --network=host -v aws:/root/.aws amazon/aws-cli'
+
 # functions
 function set-title {
     ORIG=$PS1;
