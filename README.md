@@ -9,7 +9,7 @@ initial setup is easy
 ```
 git clone https://github.com/tryauuum/my-salt /srv/salt/
 wget -O - https://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
-echo 'deb http://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest focal main' > /etc/apt/sources.list.d/saltstack.list
+echo 'deb [arch=amd64] http://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest focal main' > /etc/apt/sources.list.d/saltstack.list
 apt update
 apt-get install salt-minion --yes
 ```
