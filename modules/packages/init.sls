@@ -1,6 +1,7 @@
 packages_install:
   pkg.installed:
     - pkgs:
+      - binutils
       - curl
       - ethtool
       - git
