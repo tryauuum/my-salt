@@ -1,3 +1,10 @@
+packages_debconf:
+  debconf.set:
+    - name: postfix
+    - data:
+        'postfix/mailname': {'type': 'string', 'value': {{ grains.id }} }
+        'postfix/main_mailer_type': {'type': 'select', 'value': 'Local only'}
+
 packages_install:
   pkg.installed:
     - pkgs:
@@ -7,11 +14,13 @@ packages_install:
       - git
       - htop
       - kpartx
+      - mailutils
 {%- if grains.id == 'melchior' %}
       - msr-tools
 {%- endif %}
       - nmap
       - openssh-server
+      - postfix
       - pv
       - pwgen
       - screen
@@ -23,6 +32,8 @@ packages_install:
 {%- if salt.pkg.version('xubuntu-core') %}
       - wireshark
 {%- endif %}
+    - require:
+        - debconf: postfix
 
 packages_purge:
   pkg.purged:
