@@ -12,3 +12,6 @@ base:
 {%- if salt.pkg.version('docker-ce') %}
     - modules.docker
 {%- endif %}
+{%- if salt['file.is_link']('/dev/mapper/vg-home') %}
+    - modules.lvm_snapshot
+{%- endif %}
