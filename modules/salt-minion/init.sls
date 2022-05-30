@@ -4,6 +4,16 @@ salt-minion_please_stay_dead:
     - name: salt-minion
     - enable: False
 
+salt-minion_config:
+  file.managed:
+    - name: /etc/salt/minion
+    - user: root
+    - group: root
+    - mode: 0644
+    - contents: |
+        master_type: disable
+        state_verbose: False
+
 /srv/salt/.git/config:
   file.managed:
     - user: root
