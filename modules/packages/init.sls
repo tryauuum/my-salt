@@ -49,3 +49,4 @@ packages_purge:
       - snapd
       - transmission-gtk
       - ubuntu-server           # byobu and others
+      - ufw

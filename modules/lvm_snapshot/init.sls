@@ -15,3 +15,17 @@ lvm_snapshot_cron_job:
     - minute: 0
     - hour: 2
     - identifier: lvm_snapshot.sh
+
+# and this should be in a separate module
+# weirdly enough, lvm2 restart's not required
+lvm_snapshot_lvm_config:
+  file.managed:
+    - name: /etc/lvm/lvm.conf
+    - mode: 0644
+    - user: root
+    - group: root
+    - contents: |
+        activation {
+            snapshot_autoextend_threshold = 70
+            snapshot_autoextend_percent = 20
+        }
