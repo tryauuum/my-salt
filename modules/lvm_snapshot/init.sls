@@ -16,6 +16,16 @@ lvm_snapshot_cron_job:
     - hour: 2
     - identifier: lvm_snapshot.sh
 
+lvm_snapshot_cron_env:
+  cron.env_present:
+    - name: PATH
+    - value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+lvm_snapshot_cron_env_for_big_mails:
+  cron.env_present:
+    - name: CONTENT_TYPE
+    - value: text/plain; charset=utf-8
+
 # and this should be in a separate module
 # weirdly enough, lvm2 restart's not required
 lvm_snapshot_lvm_config:

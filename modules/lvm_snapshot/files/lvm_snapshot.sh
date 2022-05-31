@@ -19,7 +19,7 @@ function delete_every_autosnapshot_except_last_one() {
         sort -V | head -n -1 ); do
         # this will fail if filesystem is mounted. but eventually snapshot will
         # be removed
-        lvremove -f "${VG}/${SNAP}" | grep -v 'successfully removed'
+        lvremove -f "${VG}/${SNAP}" | grep -v 'successfully removed' || true
     done
 }
 
@@ -31,7 +31,7 @@ function main() {
     lvcreate --name "${VG}/${LV}${SNAPSHOT_SUBSTRING}${ISO_TODAY}" \
         --permission r \
         --extents "${SNAPSHOT_SIZE}" \
-        --snapshot "${VG}/${LV}" | grep -vP "Logical volume [^ ]+ created."
+        --snapshot "${VG}/${LV}" | grep -vP "Logical volume [^ ]+ created." || true
     delete_every_autosnapshot_except_last_one
 }
 
