@@ -8,47 +8,45 @@ rcfiles_vimrc_root:
     - group: root
     - source: salt://{{ tpldir }}/files/vimrc
 
-{%- set unprivileged_user = salt['cmd.shell']('getent passwd 1000 |
-    grep -oP "^[^:]+"', ignore_retcode=True) %}
-{%- if unprivileged_user %}
-rcfiles_sqliterc_{{ unprivileged_user }}:
+{%- if grains['unprivileged_user'] %}
+rcfiles_sqliterc_{{ grains['unprivileged_user'] }}:
   file.managed:
     - names:
-      - /home/{{ unprivileged_user }}/.sqliterc
+      - /home/{{ grains['unprivileged_user'] }}/.sqliterc
     - mode: 0600
-    - user: {{ unprivileged_user }}
-    - group: {{ unprivileged_user }}
+    - user: {{ grains['unprivileged_user'] }}
+    - group: {{ grains['unprivileged_user'] }}
     - source: salt://{{ tpldir }}/files/sqliterc
 
-rcfiles_vimrc_{{ unprivileged_user }}:
+rcfiles_vimrc_{{ grains['unprivileged_user'] }}:
   file.managed:
     - names:
-      - /home/{{ unprivileged_user }}/.vimrc
+      - /home/{{ grains['unprivileged_user'] }}/.vimrc
     - mode: 0600
-    - user: {{ unprivileged_user }}
-    - group: {{ unprivileged_user }}
+    - user: {{ grains['unprivileged_user'] }}
+    - group: {{ grains['unprivileged_user'] }}
     - source: salt://{{ tpldir }}/files/vimrc
 
-rcfiles_bashrc_{{ unprivileged_user }}:
+rcfiles_bashrc_{{ grains['unprivileged_user'] }}:
   file.managed:
     - names:
-      - /home/{{ unprivileged_user }}/.bashrc
+      - /home/{{ grains['unprivileged_user'] }}/.bashrc
     - mode: 0600
-    - user: {{ unprivileged_user }}
-    - group: {{ unprivileged_user }}
+    - user: {{ grains['unprivileged_user'] }}
+    - group: {{ grains['unprivileged_user'] }}
     - source: salt://{{ tpldir }}/files/bashrc
 
 # this is to make sure I migrated all machines to new aliases
 rcfiles_remove_aliases:
   file.absent:
-    - name: /home/{{ unprivileged_user }}/.bash_aliases
+    - name: /home/{{ grains['unprivileged_user'] }}/.bash_aliases
 
-rcfiles_xfce-terminal_{{ unprivileged_user }}:
+rcfiles_xfce-terminal_{{ grains['unprivileged_user'] }}:
   file.recurse:
-    - name: /home/{{ unprivileged_user }}/.config/xfce4/terminal/
+    - name: /home/{{ grains['unprivileged_user'] }}/.config/xfce4/terminal/
     - source: salt://{{ tpldir }}/files/terminal/
-    - user: {{ unprivileged_user }}
-    - group: {{ unprivileged_user }}
+    - user: {{ grains['unprivileged_user'] }}
+    - group: {{ grains['unprivileged_user'] }}
     - dir_mode: 0700
     - file_mode: 0600
 {%- endif %}
