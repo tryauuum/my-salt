@@ -15,3 +15,6 @@ base:
 {%- if salt['file.is_link']('/dev/mapper/vg-home') %}
     - modules.lvm_snapshot
 {%- endif %}
+{%- if salt.pkg.version('firefox') %}
+    - modules.firefox
+{%- endif %}
