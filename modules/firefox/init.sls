@@ -19,5 +19,9 @@ firefox_user_js_{{ DIR }}:
         user_pref("dom.security.https_only_mode", true);
         user_pref("dom.security.https_only_mode.upgrade_local", true);
         user_pref("dom.security.https_only_mode.upgrade_onion", true);
+        // just a silent voice against unification of URL bar and search bar...
+        user_pref("browser.search.widget.inNavBar", true);
+        // more screen space for me
+        user_pref("browser.tabs.inTitlebar", 1);
   {%- endfor %}
 {%- endif %}
