@@ -9,6 +9,7 @@ base:
     - modules.sysctl
     - modules.fstab
     - modules.unix
+    - modules.locale
 {%- if salt.pkg.version('docker-ce') %}
     - modules.docker
 {%- endif %}
