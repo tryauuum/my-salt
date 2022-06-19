@@ -7,6 +7,7 @@ base:
     - modules.vim
     - modules.apt
     - modules.sysctl
+    - modules.module_blacklist
     - modules.fstab
     - modules.unix
     - modules.locale

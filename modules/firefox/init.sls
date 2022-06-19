@@ -23,5 +23,7 @@ firefox_user_js_{{ DIR }}:
         user_pref("browser.search.widget.inNavBar", true);
         // more screen space for me
         user_pref("browser.tabs.inTitlebar", 1);
+        // computers were a mistake
+        user_pref("ui.key.menuAccessKeyFocuses", false);
   {%- endfor %}
 {%- endif %}
