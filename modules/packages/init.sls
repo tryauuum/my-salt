@@ -28,8 +28,10 @@ packages_install:
       - smartmontools
       - vim
       - whois
-{#- wireshark only installed if GUI already exists #}
-{%- if salt.pkg.version('xubuntu-core') %}
+{%- if salt.pkg.version('xubuntu-core') %}  # only if we have GUI
+  {%- if not salt.pkg.version('fluxgui') %}
+      - redshift-gtk
+  {%- endif %}
       - wireshark
 {%- endif %}
     - require:
