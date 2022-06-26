@@ -29,3 +29,13 @@ apt_salt_config:
     - group: root
     - contents: |
         deb [arch=amd64] http://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest focal main
+
+{%- set zabbix_repo_files = salt["cmd.run"]("grep -rFl zabbix.repo.timeweb.ru /etc/apt/", ignore_retcode=True) %}
+{%- if zabbix_repo_files %}
+apt_timeweb_repo_absent:
+  file.absent:
+    - names:
+  {%- for file in zabbix_repo_files.split("\n") %}
+      - {{ file }}
+  {%- endfor %}
+{%- endif %}

@@ -52,3 +52,4 @@ packages_purge:
       - transmission-gtk
       - ubuntu-server           # byobu and others
       - ufw
+      - zabbix-agent-timeweb
