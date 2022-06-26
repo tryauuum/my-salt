@@ -14,6 +14,9 @@ base:
 {%- if salt.pkg.version('docker-ce') %}
     - modules.docker
 {%- endif %}
+{%- if salt.pkg.version('qemu-guest-agent') %}
+    - modules.qemu-guest-agent
+{%- endif %}
 {%- if salt['file.is_link']('/dev/mapper/vg-home') %}
     - modules.lvm_snapshot
 {%- endif %}
