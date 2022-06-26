@@ -25,7 +25,11 @@ packages_install:
       - pwgen
       - screen
       - sipcalc
+{%- if grains.get("virtual") == "kvm" %}
+      - qemu-guest-agent
+{%- else %}
       - smartmontools
+{%- endif %}
       - vim
       - whois
 {%- if salt.pkg.version('xubuntu-core') %}  # only if we have GUI
@@ -48,6 +52,9 @@ packages_purge:
       - openvpn                 # don't need it now
       - os-prober
       - pidgin
+{%- if grains.get("virtual") == "kvm" %}
+      - smartmontools
+{%- endif %}
       - snapd
       - transmission-gtk
       - ubuntu-server           # byobu and others
