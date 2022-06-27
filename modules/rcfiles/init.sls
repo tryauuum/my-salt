@@ -61,3 +61,4 @@ rcfiles_unfuck_default_editor:
     - contents: |
         PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
         EDITOR="vim"
+        PYTHONDONTWRITEBYTECODE="1"
