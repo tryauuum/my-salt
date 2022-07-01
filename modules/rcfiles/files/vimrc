@@ -21,3 +21,5 @@ let perl_extended_vars=1
 let perl_sync_dist=250
 
 set colorcolumn=84
+
+au BufRead,BufNewFile *.ovsschema set filetype=json
