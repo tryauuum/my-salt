@@ -25,5 +25,6 @@ firefox_user_js_{{ DIR }}:
         user_pref("browser.tabs.inTitlebar", 1);
         // computers were a mistake
         user_pref("ui.key.menuAccessKeyFocuses", false);
+        user_pref("browser.sessionstore.interval", 3600000);
   {%- endfor %}
 {%- endif %}
