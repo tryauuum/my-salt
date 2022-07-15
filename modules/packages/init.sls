@@ -60,3 +60,13 @@ packages_purge:
       - ubuntu-server           # byobu and others
       - ufw
       - zabbix-agent-timeweb
+
+packages_purge_snap_more:
+  file.absent:
+    - names:
+      - /root/snap
+{%- if grains['unprivileged_user'] %}
+      - /home/{{ grains['unprivileged_user'] }}/snap
+{%- endif %}
+    - require:
+      - pkg: packages_purge
