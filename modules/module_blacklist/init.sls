@@ -4,7 +4,7 @@ module_blacklist_fuck_hdmi_output:
     - name: /etc/modprobe.d/salt.conf
     - user: root
     - group: root
-    - mode: 0600
+    - mode: 0644
     - contents: |
         blacklist {{ fucking_module }}
 
