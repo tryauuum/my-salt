@@ -23,3 +23,5 @@ base:
 {%- if salt.pkg.version('firefox') %}
     - modules.firefox
 {%- endif %}
+  kyrie:
+    - modules.syndaemon
