@@ -132,6 +132,7 @@ alias purge='ssh-keygen -R'
 alias scale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2'
 alias unscale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 1'
 alias aws-cli='sudo docker run --rm -i --network=host -v aws:/root/.aws amazon/aws-cli'
+alias unfuck-yaml="python3 -c 'import yaml, sys; print(yaml.dump(yaml.safe_load(sys.stdin)), end=\"\")'"
 
 # functions
 function set-title {
