@@ -128,7 +128,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # aliases
 alias ip='ip --color=auto'
 alias ssh-add='ssh-add -t 660m' # feel the pain
-alias purge='ssh-keygen -R'
 alias scale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2'
 alias unscale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 1'
 alias aws-cli='sudo docker run --rm -i --network=host -v aws:/root/.aws amazon/aws-cli'
@@ -140,4 +139,15 @@ function set-title {
     TITLE="\[\e]2;$@\a\]";
     PS1=${ORIG}${TITLE};
 }
+
+function purge {
+    if [[ "$1" != "" ]]; then
+        ssh-keygen -R "$1"
+        local REVERSE=$( getent hosts "$1" | grep -oE '^[^ ]+' 2>/dev/null )
+        if [[ "$REVERSE" != "" ]]; then
+            ssh-keygen -R "$REVERSE"
+        fi
+    fi
+}
+
 # --- tryauuum's modifications to original ubuntu .bashrc end ---
