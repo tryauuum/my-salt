@@ -13,8 +13,19 @@ grub_fix_defaults:
 # in daily cron
     - backup: False
 
+grub_defaults_wipe_others:
+  file.directory:
+    - name: /etc/default/grub.d/
+    - user: root
+    - group: root
+    - mode: 0644
+    - clean: True
+    - require:
+      - file: grub_fix_defaults
+
 grub_regen_config:
   cmd.wait:
     - name: 'update-grub'
     - watch:
       - file: grub_fix_defaults
+      - file: grub_defaults_wipe_others
