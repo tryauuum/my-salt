@@ -10,7 +10,7 @@ firefox_user_js_{{ DIR }}:
     - contents: |
         user_pref("browser.aboutConfig.showWarning", false);
         // force DoH only
-        user_pref("network.trr.mode", 3);
+        user_pref("network.trr.mode", 2);
         user_pref("network.trr.uri", "https://mozilla.cloudflare-dns.com/dns-query");
         user_pref("network.trr.bootstrapAddress", "1.1.1.1");
         // no reason not to trust cloudflare's rfc1918 hosts
@@ -20,6 +20,7 @@ firefox_user_js_{{ DIR }}:
         user_pref("dom.security.https_only_mode.upgrade_local", true);
         user_pref("dom.security.https_only_mode.upgrade_onion", true);
         // just a silent voice against unification of URL bar and search bar...
+        // FIXME doesn't look like it works
         user_pref("browser.search.widget.inNavBar", true);
         // more screen space for me
         user_pref("browser.tabs.inTitlebar", 1);
