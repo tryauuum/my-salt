@@ -5,7 +5,8 @@ in other words, this is a collection of [salt](https://github.com/saltstack/salt
 
 # how to install
 
-initial setup is easy
+initial setup is easy\
+even though there's `20.04` in repo URL, instructions work for both 20.04 and 22.04
 ```
 git clone https://github.com/tryauuum/my-salt /srv/salt/
 wget -O - https://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
@@ -23,4 +24,3 @@ salt-call state.apply --local
 
 * to keep everything easy to install, pillar is not used. due to that, code somewhat sucks
 * again, to keep everything easy to install, no node roles or categories exist. because assining roles/categories to machines complicates installation
-* installation guide assumes that only one operating system exists (ubuntu 20.04)
