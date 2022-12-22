@@ -2,6 +2,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 set backspace=indent,eol,start
 set foldcolumn=0
+set foldopen-=search
 
 syntax on
 set modeline
