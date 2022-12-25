@@ -27,8 +27,6 @@ firefox_user_js_{{ DIR }}:
         // computers were a mistake
         user_pref("ui.key.menuAccessKeyFocuses", false);
         user_pref("browser.sessionstore.interval", 3600000);
-        // might be a bad idea, sometimes you need this in e.g. chat apps
-        // FIXME convert it to "disable pop-up everywhere but allow manual override"
-        user_pref("dom.webnotifications.enabled", false);
+        user_pref("permissions.default.desktop-notification", 2);
   {%- endfor %}
 {%- endif %}
