@@ -11,7 +11,7 @@ sysctl_config:
         net.ipv4.conf.default.log_martians = 1
         net.ipv4.conf.all.ignore_routes_with_linkdown = 1
         net.ipv4.conf.default.ignore_routes_with_linkdown = 1
-        {%- if grains.id.startswith("proxy") %}
+        {%- if grains.id in ("proxy", "kirov") %}
         net.ipv4.ip_forward = 1
         {%- else %}
         net.ipv4.ip_forward = 0
