@@ -2,6 +2,7 @@ locale_locales_present:
   locale.present:
     - names:
       - en_US.UTF-8
+      - fi_FI.UTF-8
       - ru_RU.UTF-8
     - require_in:
       - file: locale_update_file_in_etc
