@@ -48,8 +48,6 @@ packages_purge:
       - landscape-common
       - light-locker
       - mlocate
-      - network-manager-openvpn # don't need it now
-      - openvpn                 # don't need it now
       - os-prober
       - pidgin
 {%- if grains.get("virtual") == "kvm" %}

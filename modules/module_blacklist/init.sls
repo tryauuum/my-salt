@@ -1,3 +1,4 @@
+{%- if grains.id != 'hopea' %}
 {% set fucking_module = 'snd_hda_codec_hdmi' %}
 module_blacklist_fuck_hdmi_output:
   file.managed:
@@ -13,3 +14,5 @@ module_blacklist_fail_if_loaded:
     - name: module {{ fucking_module }} is not unloaded, please reboot
     - failhard: False
     - onlyif: lsmod | grep -qw {{ fucking_module }}
+
+{%- endif %}
