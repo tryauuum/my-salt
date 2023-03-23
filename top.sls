@@ -25,3 +25,5 @@ base:
 {%- endif %}
   kyrie:
     - modules.syndaemon
+  hopea:
+    - modules.syndaemon
