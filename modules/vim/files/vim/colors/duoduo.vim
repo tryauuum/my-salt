@@ -12,7 +12,7 @@ set background=dark
 set t_Co=256
 let g:colors_name = "duoduo"
 
-highlight Normal guisp=#292929 guifg=#f2f2f2 guibg=#292929 gui=NONE ctermfg=255 ctermbg=NONE cterm=NONE
+highlight Normal guisp=#292929 guifg=#f2f2f2 guibg=#292929 gui=NONE ctermfg=255 ctermbg=235 cterm=NONE
 
 highlight IncSearch guifg=#000000 guibg=#90ee90 gui=NONE ctermfg=16 ctermbg=120 cterm=NONE
 highlight WildMenu guisp=#ffff45 guifg=#000000 guibg=#ffff45 gui=NONE ctermfg=16 ctermbg=227 cterm=NONE
@@ -25,7 +25,7 @@ highlight PreCondit guisp=NONE guifg=#acace6 guibg=NONE gui=bold ctermfg=147 cte
 highlight Include guisp=NONE guifg=#acace6 guibg=NONE gui=NONE ctermfg=147 cterm=NONE
 highlight Float guisp=NONE guifg=#ff477e guibg=NONE gui=bold ctermfg=204 cterm=bold
 highlight StatusLineNC guisp=#4d4d4d guifg=#87cfeb guibg=#4d4d4d gui=NONE ctermfg=117 ctermbg=239 cterm=NONE
-highlight NonText guisp=#292929 guifg=#4d4d4d guibg=#292929 gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
+highlight NonText guisp=#292929 guifg=#4d4d4d guibg=#292929 gui=NONE ctermfg=239 ctermbg=235 cterm=NONE
 highlight DiffText guisp=#fa2d2d guifg=NONE guibg=#fa2d2d gui=NONE ctermbg=196 cterm=NONE
 highlight ErrorMsg guisp=#fa2d2d guifg=#ffffff guibg=#fa2d2d gui=NONE ctermfg=231 ctermbg=196 cterm=NONE
 highlight Ignore guisp=NONE guifg=#292929 guibg=NONE gui=NONE ctermfg=235 cterm=NONE
