@@ -150,4 +150,11 @@ function purge {
     fi
 }
 
+function wssh {
+    while true; do
+        ssh -o ConnectTimeout=1 -o ConnectionAttempts=1 $1 && break
+        sleep 5
+    done
+}
+
 # --- tryauuum's modifications to original ubuntu .bashrc end ---
