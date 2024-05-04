@@ -1,4 +1,6 @@
-{%- set blacklist = salt["cmd.shell"]("qemu-ga --blacklist ? | grep -vE '^(guest-fsfreeze|guest-sync)' | sort -V")|replace("\n", ",") %}
+# the goal is to have qemu guest agent running but prevent the provider from spying on us
+
+{%- set blacklist = salt["cmd.shell"]("qemu-ga --blacklist ? | grep -vE '^(guest-fsfreeze|guest-sync|guest-shutdown)' | sort -V")|replace("\n", ",") %}
 
 qemu-guest-agent_override:
   file.managed:
