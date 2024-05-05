@@ -25,6 +25,7 @@ packages_install:
       - pwgen
       - screen
       - sipcalc
+      - tmux
 {%- if grains.get("virtual") == "kvm" %}
       - qemu-guest-agent
 {%- else %}
