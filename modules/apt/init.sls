@@ -3,6 +3,17 @@ unattended-upgrades:
     - require_in:
       - file: apt_unattended
 
+apt_fuck_snapd:
+  file.managed:
+    - name: /etc/apt/preferences.d/snapd
+    - mode: 0644
+    - user: root
+    - group: root
+    - contents: |
+        Package: snapd
+        Pin: release *
+        Pin-Priority: -1
+
 apt_unattended:
   file.managed:
     - name: /etc/apt/apt.conf.d/50unattended-upgrades

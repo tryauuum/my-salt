@@ -10,3 +10,4 @@
 * fail2ban?
 * some sort of broken RAID notifier
 * +x for melchior hook — haven't I done it yet?
+* firefox should be installed from some magical repo on 24.04 / fuck snapd
