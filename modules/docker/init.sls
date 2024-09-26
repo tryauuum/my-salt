@@ -1,11 +1,8 @@
-# I do not want docker to turn my machine into a fucking router
 docker_config:
   file.serialize:
     - name: /etc/docker/daemon.json
     - dataset:
-        bridge: "none"
-        iptables: False
-        ip-forward: False
+        log-driver: "local"
     - serializer: json
     - user: root
     - group: root

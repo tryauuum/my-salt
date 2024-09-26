@@ -15,11 +15,6 @@ sysctl_config:
         net.ipv4.conf.all.arp_ignore = 1
         net.ipv4.conf.default.arp_announce = 2
         net.ipv4.conf.default.arp_ignore = 1
-        {%- if grains.id in ("proxy", "kirov") %}
-        net.ipv4.ip_forward = 1
-        {%- else %}
-        net.ipv4.ip_forward = 0
-        {%- endif %}
         net.ipv4.neigh.default.gc_thresh1 = 5000
         net.ipv4.neigh.default.gc_thresh2 = 10000
         net.ipv4.neigh.default.gc_thresh3 = 20000
