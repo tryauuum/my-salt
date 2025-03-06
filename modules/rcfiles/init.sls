@@ -51,7 +51,8 @@ rcfiles_xfce-terminal_{{ grains['unprivileged_user'] }}:
     - file_mode: 0600
 {%- endif %}
 
-# not really an rc-file
+# not really rc-files
+
 rcfiles_unfuck_default_editor:
   file.managed:
     - name: /etc/environment
@@ -62,3 +63,13 @@ rcfiles_unfuck_default_editor:
         PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
         EDITOR="vim"
         PYTHONDONTWRITEBYTECODE="1"
+
+rcfiles_skip_american_slavery_shame:
+  file.managed:
+    - name: /etc/gitconfig
+    - mode: 0644
+    - user: root
+    - group: root
+    - contents: |
+        [init]
+             defaultBranch = master
