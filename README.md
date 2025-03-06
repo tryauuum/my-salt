@@ -5,14 +5,12 @@ in other words, this is a collection of [salt](https://github.com/saltstack/salt
 
 # how to install
 
-initial setup is easy\
-even though there's `20.04` in repo URL, instructions work for both 20.04 and 22.04
 ```
 git clone https://github.com/tryauuum/my-salt /srv/salt/
-wget -O - https://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
-echo 'deb [arch=amd64] http://repo.saltstack.com/py3/ubuntu/20.04/amd64/latest focal main' > /etc/apt/sources.list.d/saltstack.list
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public > /etc/apt/keyrings/salt-archive-keyring.pgp
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources > /etc/apt/sources.list.d/salt.sources
 apt update
-apt-get install salt-minion --yes
+apt-get install salt-minion=3007.1 --yes # later salt creates config to pin the version
 ```
 
 then you can (periodically) run this thing when you want to apply state from this repo

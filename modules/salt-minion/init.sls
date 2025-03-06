@@ -14,6 +14,16 @@ salt-minion_config:
         master_type: disable
         state_verbose: False
 
+/etc/apt/preferences.d/salt-pin-1001:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 0644
+    - contents: |
+        Package: salt-*
+        Pin: version 3007.*
+        Pin-Priority: 1001
+
 /srv/salt/.git/config:
   file.managed:
     - user: root
