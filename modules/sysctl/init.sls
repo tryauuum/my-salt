@@ -18,7 +18,6 @@ sysctl_config:
         net.ipv4.neigh.default.gc_thresh1 = 5000
         net.ipv4.neigh.default.gc_thresh2 = 10000
         net.ipv4.neigh.default.gc_thresh3 = 20000
-        user.max_user_namespaces = 0
         # want swap for suspend only
         vm.swappiness = 0
 
