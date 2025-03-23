@@ -133,6 +133,7 @@ alias scale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2; xfce4-p
 alias unscale='xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 1; xfce4-panel -r'
 alias aws-cli='sudo docker run --rm -i --network=host -v aws:/root/.aws amazon/aws-cli'
 alias unfuck-yaml="python3 -c 'import yaml, sys; print(yaml.dump(yaml.safe_load(sys.stdin)), end=\"\")'"
+alias unfuck-shell='tr -d "\n" | sed -E "s/\\\\ +//g"; echo'
 
 # functions
 function set-title {
