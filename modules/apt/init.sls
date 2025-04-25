@@ -101,57 +101,47 @@ apt_firefox_config:
         Enabled: yes
         Types: deb
         URIs: https://packages.broadcom.com/artifactory/saltproject-deb
-        Signed-By: /etc/apt/keyrings/salt-archive-keyring.pgp
+        Signed-By: /etc/apt/keyrings/salt-archive-keyring.gpg
         Suites: stable
         Components: main
 
-/etc/apt/keyrings/salt-archive-keyring.pgp:
-  file.managed:
-    - mode: 0644
-    - user: root
-    - group: root
-    - contents: |
-        -----BEGIN PGP PUBLIC KEY BLOCK-----
-
-        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
-        =ZKPF
-        -----END PGP PUBLIC KEY BLOCK-----
+/etc/apt/keyrings/salt-archive-keyring.pgp: file.absent
+/etc/apt/keyrings/salt-archive-keyring.gpg:
+  file.decode:
+    - encoding_type: base64
+    - encoded_data: |
+        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
+        tTs=
 
 {%- set zabbix_repo_files = salt["cmd.run"]("grep -rFlsa zabbix.repo.timeweb.ru /etc/apt/", ignore_retcode=True) %}
 {%- if zabbix_repo_files %}

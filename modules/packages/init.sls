@@ -56,6 +56,7 @@ packages_purge:
 {%- endif %}
       - snapd
       - transmission-gtk
+      - transmission-remote-gtk
       - ubuntu-server           # byobu and others
       - ufw
       - zabbix-agent-timeweb

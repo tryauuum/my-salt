@@ -7,8 +7,17 @@ in other words, this is a collection of [salt](https://github.com/saltstack/salt
 
 ```
 git clone https://github.com/tryauuum/my-salt /srv/salt/
-curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public > /etc/apt/keyrings/salt-archive-keyring.pgp
-curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources > /etc/apt/sources.list.d/salt.sources
+
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | gpg --dearmor -o /etc/apt/keyrings/salt-archive-keyring.gpg
+cat <<EOF > /etc/apt/sources.list.d/salt.sources
+X-Repolib-Name: Salt Project
+Enabled: yes
+Types: deb
+URIs: https://packages.broadcom.com/artifactory/saltproject-deb
+Signed-By: /etc/apt/keyrings/salt-archive-keyring.gpg
+Suites: stable
+Components: main
+EOF
 apt update
 apt-get install salt-minion=3007.1 --yes # later salt creates config to pin the version
 ```
